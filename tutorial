@@ -1,0 +1,29 @@
+Mude para a pasta do projeto.
+  cd bratstvo/projeto/
+Altere para o ramo master, e atualize o repositorio
+  git branch master
+  git pull
+Mude para o seu ramo de trabalho.
+  git checkout lucas
+Altere os arquivos que quiser.
+
+Se quiser verificar quais arquivos foram alterados
+  git status
+
+[[ loop
+	Para adicionar todos os arquivos ao repositorio
+	  git add .
+
+	Para salvar o stage no local, faça o commit
+	Escreva o que mudou, o git espera o editor ser fechado completamente
+	  git commit
+]];
+
+Mude para o ramo master e mescle com o teu ramo de trabalho
+  git checkout master
+  git merge allan
+
+Envie para o repositorio remoto
+  git push
+
+Esta é apenas uma linha de teste
