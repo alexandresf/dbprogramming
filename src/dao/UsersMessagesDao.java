@@ -10,6 +10,8 @@ import java.util.List;
 //import model.Message;
 //import model.User;
 import daoFactory.DaoFactory;
+import sistema_correio.Message;
+import sistema_correio.User;
 
 public class UsersMessagesDao {
 	

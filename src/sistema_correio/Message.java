@@ -17,6 +17,7 @@ public class Message {
     private User from, to;
     private boolean read;
     private Date createdat;
+    private Calendar calendar;
 
 
     public Message(User from, User to, String subject, String text){
@@ -25,7 +26,7 @@ public class Message {
         this.subject = subject;
         this.body = text;
         this.read = false;
-        createdat = new Date(Calendar.getInstance().getTimeInMillis());
+        calendar = Calendar.getInstance();
     }
     /**
      * Método que imprime uma mensagem.
@@ -65,7 +66,7 @@ public class Message {
      */
     public String getTempoDecorrido(){
         Calendar c = Calendar.getInstance();
-        return (Util.Util.timeDiff(createdat, c));
+        return (Util.Util.timeDiff(calendar, c));
     }
 
     /**
