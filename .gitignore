@@ -1,0 +1,16 @@
+tmp/*
+log/*
+bin/*
+*~
+.\#*
+\#**\#
+.*.sw[op]
+.sw[op]
+*.applet
+.project
+.settings/*
+build.xml
+manifest.mf
+nbproject/
+build/
+dist/
