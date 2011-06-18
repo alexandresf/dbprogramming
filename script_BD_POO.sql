@@ -45,4 +45,27 @@ CREATE TABLE mensagens (
   INDEX mensagens_FKIndex2(Chamados_id)
 );
 
+-- Inserções
+-- insercao colaboradores
 
+insert into colaboradores values (1, '4GB 500GB Intel Core i5', 'Ubuntu x64');
+insert into colaboradores values (id, '2GB 250GB Intel Core 2 Duo', 'Ubuntu x64');
+insert into colaboradores values (id, '2GB 160GB Intel Pentium Dual Core', 'Ubuntu x64');
+
+-- insercao cargo
+insert into cargo values (1, 'Supervisor');
+insert into cargo values (id, 'Tecnico');
+insert into cargo values (id, 'Vendedor');
+
+-- insercao estado
+insert into estado values (1, 'Aberto');
+insert into estado values (id, 'Atribuido para manutencao');
+insert into estado values (id, 'Em execucao');
+insert into estado values (id, 'Finalizado');
+
+-- insercao chamados
+insert into chamados values (1, 1, 1);
+insert into chamados values (id, 
+
+-- insercao mensagens
+insert into mensagens values (1, '
