@@ -4,6 +4,7 @@
  */
 
 package sistema_correio;
+import java.sql.Date;
 import java.util.Calendar;
 
 /**
@@ -12,19 +13,19 @@ import java.util.Calendar;
  */
 public class Message {
 
-    private String subject, text;
+    private String subject, body;
     private User from, to;
     private boolean read;
-    private Calendar calendar;
+    private Date createdat;
 
 
     public Message(User from, User to, String subject, String text){
         this.from = from;
         this.to = to;
         this.subject = subject;
-        this.text = text;
+        this.body = text;
         this.read = false;
-        calendar = Calendar.getInstance();
+        createdat = new Date(Calendar.getInstance().getTimeInMillis());
     }
     /**
      * Método que imprime uma mensagem.
@@ -32,9 +33,14 @@ public class Message {
     public String toString(){
         return("De: " + from.getName() + "(" + from.getLogin()+ ")\n" +
                 "Assunto: " + subject + "\n" +
-                "Recebimento: " + Util.Util.df2.format(calendar.getTime()) + "\n" +
+                "Recebimento: " + Util.Util.df2.format(createdat.getTime()) + "\n" +
                 "Tempo decorrido: " + getTempoDecorrido() + "\n" +
-                "Mensagem: " + text);
+                "Mensagem: " + body);
+    }
+
+    public Date getCreatedAt()
+    {
+        return createdat;
     }
 
     /**
@@ -50,7 +56,7 @@ public class Message {
      * @return a Data em que a mensagem foi recebida.
      */
     public String getReceivedTime(){
-        return Util.Util.df.format(calendar.getTime());
+        return Util.Util.df.format(createdat.getTime());
     }
 
     /**
@@ -59,7 +65,7 @@ public class Message {
      */
     public String getTempoDecorrido(){
         Calendar c = Calendar.getInstance();
-        return (Util.Util.timeDiff(calendar, c));
+        return (Util.Util.timeDiff(createdat, c));
     }
 
     /**
@@ -123,16 +129,16 @@ public class Message {
      * Retorna o texto da mensagem.
      * @return O texto da mensagem.
      */
-    public String getText(){
-        return text;
+    public String getBody(){
+        return body;
     }
 
     /**
      * Define o texto de uma mensagem
      * @param text O novo texto da mensagem.
      */
-    public void setText(String text){
-        this.text = text;
+    public void setBody(String body){
+        this.body = body;
     }
 
 
